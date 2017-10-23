@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OBLAPPModelStoreContainer" CdmEntityContainer="OBLAPPEntities">
+    <EntitySetMapping Name="APPUSERs">
+      <EntityTypeMapping TypeName="OBLAPPModel.APPUSER">
+        <MappingFragment StoreEntitySet="APPUSER">
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="MOBILENO" ColumnName="MOBILENO" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ACTRANINFOes">
+      <EntityTypeMapping TypeName="OBLAPPModel.ACTRANINFO">
+        <MappingFragment StoreEntitySet="ACTRANINFO">
+          <ScalarProperty Name="TRANAMOUNT" ColumnName="TRANAMOUNT" />
+          <ScalarProperty Name="TRANTYPE" ColumnName="TRANTYPE" />
+          <ScalarProperty Name="TRANNO" ColumnName="TRANNO" />
+          <ScalarProperty Name="TRANDATE" ColumnName="TRANDATE" />
+          <ScalarProperty Name="ACID" ColumnName="ACID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPACINFOes">
+      <EntityTypeMapping TypeName="OBLAPPModel.APPACINFO">
+        <MappingFragment StoreEntitySet="APPACINFO">
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="ACBALANCE" ColumnName="ACBALANCE" />
+          <ScalarProperty Name="ACNAME" ColumnName="ACNAME" />
+          <ScalarProperty Name="ACOPENDATE" ColumnName="ACOPENDATE" />
+          <ScalarProperty Name="ACTYPE" ColumnName="ACTYPE" />
+          <ScalarProperty Name="ACNO" ColumnName="ACNO" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPCUSTINFOes">
+      <EntityTypeMapping TypeName="OBLAPPModel.APPCUSTINFO">
+        <MappingFragment StoreEntitySet="APPCUSTINFO">
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="CUSTOMERNO" ColumnName="CUSTOMERNO" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPCREDITCARDINFOes">
+      <EntityTypeMapping TypeName="OBLAPPModel.APPCREDITCARDINFO">
+        <MappingFragment StoreEntitySet="APPCREDITCARDINFO">
+          <ScalarProperty Name="CREATEDBY" ColumnName="CREATEDBY" />
+          <ScalarProperty Name="CREATEDON" ColumnName="CREATEDON" />
+          <ScalarProperty Name="ISACTIVE" ColumnName="ISACTIVE" />
+          <ScalarProperty Name="CCARDNO" ColumnName="CCARDNO" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARDDETAILINFOes">
+      <EntityTypeMapping TypeName="OBLAPPModel.CARDDETAILINFO">
+        <MappingFragment StoreEntitySet="CARDDETAILINFO">
+          <ScalarProperty Name="STID" ColumnName="STID" />
+          <ScalarProperty Name="CASHADV" ColumnName="CASHADV" />
+          <ScalarProperty Name="CREDITS" ColumnName="CREDITS" />
+          <ScalarProperty Name="PAYMENTS" ColumnName="PAYMENTS" />
+          <ScalarProperty Name="TOTALINTR" ColumnName="TOTALINTR" />
+          <ScalarProperty Name="TOTALPURCHASE" ColumnName="TOTALPURCHASE" />
+          <ScalarProperty Name="CURRBALANCE" ColumnName="CURRBALANCE" />
+          <ScalarProperty Name="PREVBALANCE" ColumnName="PREVBALANCE" />
+          <ScalarProperty Name="MINAMNTDUE" ColumnName="MINAMNTDUE" />
+          <ScalarProperty Name="AVAILABLECASHLIMIT" ColumnName="AVAILABLECASHLIMIT" />
+          <ScalarProperty Name="CASHLIMIT" ColumnName="CASHLIMIT" />
+          <ScalarProperty Name="AVAILABLECRLIMIT" ColumnName="AVAILABLECRLIMIT" />
+          <ScalarProperty Name="CREDITLIMIT" ColumnName="CREDITLIMIT" />
+          <ScalarProperty Name="CURRENCY" ColumnName="CURRENCY" />
+          <ScalarProperty Name="BILLINGDATE" ColumnName="BILLINGDATE" />
+          <ScalarProperty Name="STNO" ColumnName="STNO" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PAYMENTDATE" ColumnName="PAYMENTDATE" />
+          <ScalarProperty Name="ADDRESS" ColumnName="ADDRESS" />
+          <ScalarProperty Name="CLIENTNAME" ColumnName="CLIENTNAME" />
+          <ScalarProperty Name="MASKCARDNO" ColumnName="MASKCARDNO" />
+          <ScalarProperty Name="CARDNO" ColumnName="CARDNO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="APPUSERLOGs">
+      <EntityTypeMapping TypeName="OBLAPPModel.APPUSERLOG">
+        <MappingFragment StoreEntitySet="APPUSERLOG">
+          <ScalarProperty Name="LOGTIME" ColumnName="LOGTIME" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="OTP" ColumnName="OTP" />
+          <ScalarProperty Name="USERID" ColumnName="USERID" />
+          <ScalarProperty Name="MOBILENO" ColumnName="MOBILENO" />
+          <ScalarProperty Name="DEVICEID" ColumnName="DEVICEID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

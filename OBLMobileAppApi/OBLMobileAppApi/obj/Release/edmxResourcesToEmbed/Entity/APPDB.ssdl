@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OBLAPPModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ACTRANINFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ACID" Type="bigint" Nullable="false" />
+    <Property Name="TRANDATE" Type="datetime" Nullable="false" />
+    <Property Name="TRANNO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TRANTYPE" Type="nvarchar" MaxLength="5" />
+    <Property Name="TRANAMOUNT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APPACINFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="ACNO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACTYPE" Type="nvarchar" MaxLength="10" />
+    <Property Name="ACOPENDATE" Type="datetime" Nullable="false" />
+    <Property Name="ACNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACBALANCE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+    <Property Name="CREATEDON" Type="datetime" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APPCREDITCARDINFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="CCARDNO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+    <Property Name="CREATEDON" Type="datetime" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APPCUSTINFO">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="CUSTOMERNO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+    <Property Name="CREATEDON" Type="datetime" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="APPUSER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="USERID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PASSWORD" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="EMAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="MOBILENO" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ISACTIVE" Type="bit" Nullable="false" />
+    <Property Name="CREATEDBY" Type="bigint" Nullable="false" />
+    <Property Name="CREATEDON" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="APPUSERLOG">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEVICEID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="MOBILENO" Type="nvarchar" MaxLength="50" />
+    <Property Name="USERID" Type="bigint" Nullable="false" />
+    <Property Name="OTP" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Token" Type="nvarchar" MaxLength="50" />
+    <Property Name="LOGTIME" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'OBLAPP.dbo.CARDDETAILINFO' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CARDDETAILINFO">
+    <Key>
+      <PropertyRef Name="CARDNO" />
+      <PropertyRef Name="CLIENTNAME" />
+      <PropertyRef Name="ADDRESS" />
+      <PropertyRef Name="PAYMENTDATE" />
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="STNO" />
+      <PropertyRef Name="BILLINGDATE" />
+      <PropertyRef Name="CURRENCY" />
+      <PropertyRef Name="CREDITLIMIT" />
+      <PropertyRef Name="AVAILABLECRLIMIT" />
+      <PropertyRef Name="CASHLIMIT" />
+      <PropertyRef Name="AVAILABLECASHLIMIT" />
+      <PropertyRef Name="MINAMNTDUE" />
+      <PropertyRef Name="PREVBALANCE" />
+      <PropertyRef Name="CURRBALANCE" />
+      <PropertyRef Name="TOTALPURCHASE" />
+      <PropertyRef Name="TOTALINTR" />
+      <PropertyRef Name="PAYMENTS" />
+      <PropertyRef Name="CREDITS" />
+      <PropertyRef Name="STID" />
+    </Key>
+    <Property Name="CARDNO" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MASKCARDNO" Type="nvarchar" MaxLength="33" />
+    <Property Name="CLIENTNAME" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ADDRESS" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="PAYMENTDATE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="STNO" Type="int" Nullable="false" />
+    <Property Name="BILLINGDATE" Type="datetime" Nullable="false" />
+    <Property Name="CURRENCY" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CREDITLIMIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AVAILABLECRLIMIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CASHLIMIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="AVAILABLECASHLIMIT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MINAMNTDUE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PREVBALANCE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CURRBALANCE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TOTALPURCHASE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="TOTALINTR" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="PAYMENTS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CREDITS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="CASHADV" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="STID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ACTRANINFO_APPACINFO">
+    <End Role="APPACINFO" Type="Self.APPACINFO" Multiplicity="1" />
+    <End Role="ACTRANINFO" Type="Self.ACTRANINFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPACINFO">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ACTRANINFO">
+        <PropertyRef Name="ACID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPACINFO_APPUSER">
+    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
+    <End Role="APPACINFO" Type="Self.APPACINFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPUSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="APPACINFO">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPCUSTINFO_APPUSER">
+    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
+    <End Role="APPCREDITCARDINFO" Type="Self.APPCREDITCARDINFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPUSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="APPCREDITCARDINFO">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPCUSTINFO_APPUSER1">
+    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
+    <End Role="APPCUSTINFO" Type="Self.APPCUSTINFO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPUSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="APPCUSTINFO">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_APPUSERLOG_APPUSER">
+    <End Role="APPUSER" Type="Self.APPUSER" Multiplicity="1" />
+    <End Role="APPUSERLOG" Type="Self.APPUSERLOG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="APPUSER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="APPUSERLOG">
+        <PropertyRef Name="USERID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OBLAPPModelStoreContainer">
+    <EntitySet Name="ACTRANINFO" EntityType="Self.ACTRANINFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APPACINFO" EntityType="Self.APPACINFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APPCREDITCARDINFO" EntityType="Self.APPCREDITCARDINFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APPCUSTINFO" EntityType="Self.APPCUSTINFO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APPUSER" EntityType="Self.APPUSER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="APPUSERLOG" EntityType="Self.APPUSERLOG" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARDDETAILINFO" EntityType="Self.CARDDETAILINFO" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CARDDETAILINFO].[CARDNO] AS [CARDNO], 
+[CARDDETAILINFO].[MASKCARDNO] AS [MASKCARDNO], 
+[CARDDETAILINFO].[CLIENTNAME] AS [CLIENTNAME], 
+[CARDDETAILINFO].[ADDRESS] AS [ADDRESS], 
+[CARDDETAILINFO].[PAYMENTDATE] AS [PAYMENTDATE], 
+[CARDDETAILINFO].[ID] AS [ID], 
+[CARDDETAILINFO].[STNO] AS [STNO], 
+[CARDDETAILINFO].[BILLINGDATE] AS [BILLINGDATE], 
+[CARDDETAILINFO].[CURRENCY] AS [CURRENCY], 
+[CARDDETAILINFO].[CREDITLIMIT] AS [CREDITLIMIT], 
+[CARDDETAILINFO].[AVAILABLECRLIMIT] AS [AVAILABLECRLIMIT], 
+[CARDDETAILINFO].[CASHLIMIT] AS [CASHLIMIT], 
+[CARDDETAILINFO].[AVAILABLECASHLIMIT] AS [AVAILABLECASHLIMIT], 
+[CARDDETAILINFO].[MINAMNTDUE] AS [MINAMNTDUE], 
+[CARDDETAILINFO].[PREVBALANCE] AS [PREVBALANCE], 
+[CARDDETAILINFO].[CURRBALANCE] AS [CURRBALANCE], 
+[CARDDETAILINFO].[TOTALPURCHASE] AS [TOTALPURCHASE], 
+[CARDDETAILINFO].[TOTALINTR] AS [TOTALINTR], 
+[CARDDETAILINFO].[PAYMENTS] AS [PAYMENTS], 
+[CARDDETAILINFO].[CREDITS] AS [CREDITS], 
+[CARDDETAILINFO].[CASHADV] AS [CASHADV], 
+[CARDDETAILINFO].[STID] AS [STID]
+FROM [dbo].[CARDDETAILINFO] AS [CARDDETAILINFO]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_ACTRANINFO_APPACINFO" Association="Self.FK_ACTRANINFO_APPACINFO">
+      <End Role="APPACINFO" EntitySet="APPACINFO" />
+      <End Role="ACTRANINFO" EntitySet="ACTRANINFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPACINFO_APPUSER" Association="Self.FK_APPACINFO_APPUSER">
+      <End Role="APPUSER" EntitySet="APPUSER" />
+      <End Role="APPACINFO" EntitySet="APPACINFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPCUSTINFO_APPUSER" Association="Self.FK_APPCUSTINFO_APPUSER">
+      <End Role="APPUSER" EntitySet="APPUSER" />
+      <End Role="APPCREDITCARDINFO" EntitySet="APPCREDITCARDINFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPCUSTINFO_APPUSER1" Association="Self.FK_APPCUSTINFO_APPUSER1">
+      <End Role="APPUSER" EntitySet="APPUSER" />
+      <End Role="APPCUSTINFO" EntitySet="APPCUSTINFO" />
+    </AssociationSet>
+    <AssociationSet Name="FK_APPUSERLOG_APPUSER" Association="Self.FK_APPUSERLOG_APPUSER">
+      <End Role="APPUSER" EntitySet="APPUSER" />
+      <End Role="APPUSERLOG" EntitySet="APPUSERLOG" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

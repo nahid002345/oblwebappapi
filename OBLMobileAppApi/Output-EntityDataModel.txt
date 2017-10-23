@@ -1,0 +1,3 @@
+﻿Generated model file: APPDB.edmx.
+Loading metadata from the database took 00:00:02.0326685.
+Generating the model took 00:00:01.5798944.
